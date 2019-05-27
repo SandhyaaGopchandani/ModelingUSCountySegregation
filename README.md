@@ -29,3 +29,35 @@ For each household, the distance from the average rank of the county it is in, s
 
 ![Model Algorithm](https://github.com/SandhyaaGopchandani/ModelingUSCountySegregation/blob/master/model_algorithm.png)
 
+
+## Results
+
+In this section we will show the results that we got from running the model for 3000 time steps. The ﬁgures are setup in a way that the top three plots within an image display the initial state of the system and bottom three pictures display the state of system after 3000 time-steps and with population count of 50 households in each county. The Only diﬀerence in these three ﬁgures is the initial population distribution of the nodes which seems to play an important role in reaching macro and micro level segregation.
+
+Plots a,b,c in the ﬁgures 4,5,6 are the measure of segregation, Dominance and dissatisfaction respectively at the initial state of the system, Plots d,e and f in these ﬁgures are the same measures after running the model for 3000 time-steps.
+
+- Measure of Segregation
+
+standard deviation is one of the values that we have used to measure the segregation in micro level (county) and macro level (overall network). s standard deviation closer to 0 means that all of the households in the node have the same rank in it implying the county is segregated at micro level and the standard deviation closer to 1 means a county has households of all ranks uniformly distributed, implying that there is no segregation. The plots (a&d) show the measure of segregation. The darker the color is, the segregated the counties are.
+
+- Measure of Dominance
+
+Measure of segregation although capable of demonstrating whether all households in the county have the same rank or not, it does not give any information about what rank is dominant in the county. So, we deﬁned measure of dominance as an indicator of the average rank of a county. The idea is if there are more households with rank 3 then average rank of the county should be closer to 3 and the same for 1 and 2. The plots (b&e) show the measures of dominance.
+
+- Measure of Dissatisfaction
+
+To measure how the dissatisfaction level of households with diﬀerent ranks changes as the model runs we introduced this parameter. Dissatisfaction for a household deﬁnes as the diﬀerence between a household’s rank and the average rank of the county it is in. The bigger the diﬀerence, the more dissatisﬁed a household is. The maximum value of dissatisfaction is 2 while the minimum value is 0. In a complete equilibrium and fair system, the dissatisfaction measure for households of all ranks should be closer to 0 after MAX TIME T but in reality, households with higher rank have higher resources so they should be less dissatisﬁed with other two on average. The plots (c&f) show the dissatisfaction distribution for three diﬀerent ranks.
+
+![Model Algorithm](https://github.com/SandhyaaGopchandani/ModelingUSCountySegregation/blob/master/model_result.png)
+
+shows the results of the model when households with diﬀerent levels of income were uniformly distributed in counties.
+
+Figure above shows the results of the model when households with diﬀerent levels of income are non-uniformly distributed in counties. Population of diﬀerent classes is distributed in a way that there are 50% of household with rank 3, 30% of households with rank 2 and 20% of household with rank 1. Initially, the model exhibits a behavior as it should: there is no apparent segregation (a), the overall average rank of model seems to lean towards lighter colors implying the overall network rank is higher (b) and households with rank 1 are most dissatisﬁed (c) that’s because most counties have higher rank than that closer to rank 1.
+
+The plots (d,e,f) show the changes in the network after 3000 time-steps. We can see the signs of segregation at the county level (d): counties with standard deviation closer to 0 and ones in darker in color. The overall rank of counties in network seem to go up to being closer to 3 (e). It is interesting to note that the counties with lower average rank are surrounded by the counties with higher average rank. We wonder if it is because there is higher number of high ranked households in the model or it is showing the underlying mechanism. Moreover, we can also see that dissatisfaction level for all ranks has seen a decrease implying that relocation based on ﬁnancial status might be a good indicator.
+
+![Model Algorithm](https://github.com/SandhyaaGopchandani/ModelingUSCountySegregation/blob/master/population_density.png)
+
+Figure above shows the population density in the network after 3000 time-steps. We can see how population density is changed in the network after relocation of household. A similar distribution takes place regardless of population distribution at the start. We can see that about 1000 counties have population count as 50 implying that 3000 time-steps might not be enough iterations. We think that running the simulation for longer time-steps would result in interesting results.
+
+
